@@ -3,6 +3,7 @@ from typing import List, Dict
 import os
 from openai import OpenAI
 
+
 class ResponseGenerator:
     def __init__(self, config_path='config/config.yaml'):
         with open(config_path, 'r') as f:
@@ -15,14 +16,16 @@ class ResponseGenerator:
 
     def generate_response(self, query: str, retrieved_docs: List[Dict[str, any]]) -> str:
         if not retrieved_docs:
-            return "I could not find relevant information to answer your question. Please try rephrasing or contact support directly."
+            return "I could not find relevant information to answer your question."
 
         context = "\n\n".join([
-            f"Document {i+1} (similarity: {doc['similarity']:.2f}):\n{doc['content']}"
+            f"Document {i + 1} (similarity: {doc['similarity']:.2f}):\n{doc['content']}"
             for i, doc in enumerate(retrieved_docs)
         ])
 
-        prompt = f"""You are a helpful customer support assistant. Use the following documentation to answer the customer's question. If the documentation does not contain enough information, say so clearly.
+        prompt = f"""You are a helpful customer support assistant.
+        Use the following documentation to answer the customer's question.
+        If the documentation does not contain enough information, say so clearly.
 
         Documentation:
         {context}

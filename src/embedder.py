@@ -5,6 +5,7 @@ import os
 from typing import List, Dict
 import yaml
 
+
 class DocumentEmbedder:
     def __init__(self, config_path='config/config.yaml'):
         with open(config_path, 'r') as f:

@@ -4,6 +4,7 @@ import yaml
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict
 
+
 class DocumentRetriever:
     def __init__(self, config_path='config/config.yaml'):
         with open(config_path, 'r') as f:

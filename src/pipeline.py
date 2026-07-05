@@ -6,6 +6,7 @@ from src.retriever import DocumentRetriever
 from src.generator import ResponseGenerator
 from typing import Dict
 
+
 class RAGPipeline:
     def __init__(self, config_path='config/config.yaml'):
         with open(config_path, 'r') as f:

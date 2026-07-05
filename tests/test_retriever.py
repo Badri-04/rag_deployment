@@ -2,11 +2,12 @@ import pytest
 import numpy as np
 from src.retriever import DocumentRetriever
 import json
-import os
+
 
 @pytest.fixture
 def retriever():
     return DocumentRetriever()
+
 
 @pytest.fixture
 def setup_test_embeddings(tmp_path):
@@ -25,9 +26,11 @@ def setup_test_embeddings(tmp_path):
 
     return embeddings_path, index_path
 
+
 def test_retriever_initialization(retriever):
     assert retriever.model is not None
     assert retriever.top_k > 0
+
 
 def test_retrieve_returns_correct_number_of_docs(retriever):
     if retriever.embeddings is None:
