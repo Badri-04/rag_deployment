@@ -551,7 +551,7 @@ nvtx = [
 ]
 
 [[package]]
-name = "customer-support-rag"
+name = "rag-deployment"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
