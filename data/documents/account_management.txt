@@ -1,0 +1,11 @@
+Account Management
+
+Create an account to track orders, save payment methods, and get exclusive offers.
+
+To create an account, click Sign Up in the top right corner. Enter your email and create a password. You will receive a confirmation email.
+
+Forgot your password? Click Forgot Password on the login page. Enter your email and we will send a reset link.
+
+Update your account information anytime by logging in and clicking Account Settings. You can change your email, password, shipping address, and payment methods.
+
+Delete your account by contacting customer support. We will process the request within 24 hours. Note that deleted accounts cannot be recovered.

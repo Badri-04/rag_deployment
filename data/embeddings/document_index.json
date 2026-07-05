@@ -1,0 +1,14 @@
+[
+  {
+    "id": "account_management",
+    "source": "account_management.txt"
+  },
+  {
+    "id": "returns_policy",
+    "source": "returns_policy.txt"
+  },
+  {
+    "id": "shipping_info",
+    "source": "shipping_info.txt"
+  }
+]

@@ -1,0 +1,31 @@
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.9.0
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+      - ./mlartifacts:/mlflow/mlartifacts
+    command: mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri sqlite:///mlflow/mlruns/mlflow.db --default-artifact-root file:///mlflow/mlartifacts
+    networks:
+      - rag-network
+
+  rag-app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - GIT_PYTHON_REFRESH=quiet
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    depends_on:
+      - mlflow
+    networks:
+      - rag-network
+
+networks:
+  rag-network:
+    driver: bridge
