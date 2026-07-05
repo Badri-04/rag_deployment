@@ -11,8 +11,16 @@ def embedder():
 @pytest.fixture
 def sample_documents():
     return [
-        {'id': 'doc1', 'content': 'This is a test document about returns.', 'source': 'test1.txt'},
-        {'id': 'doc2', 'content': 'This is a test document about shipping.', 'source': 'test2.txt'}
+        {
+            "id": "doc1",
+            "content": "This is a test document about returns.",
+            "source": "test1.txt",
+        },
+        {
+            "id": "doc2",
+            "content": "This is a test document about shipping.",
+            "source": "test2.txt",
+        },
     ]
 
 
