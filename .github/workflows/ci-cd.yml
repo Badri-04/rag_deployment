@@ -13,6 +13,7 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: ci/cd
     env:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
@@ -69,6 +70,7 @@ jobs:
   build-and-push:
     needs: [test, lint]
     runs-on: ubuntu-latest
+    environment: ci/cd
     outputs:
       image_pushed: ${{ steps.docker_creds.outputs.available }}
     env:
